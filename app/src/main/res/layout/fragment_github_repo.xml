@@ -1,13 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <variable
+            name="githubRepoAdapter"
+            type="com.ovais.sadapaycasestudy.features.home.presentation.GithubRepoAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.ovais.sadapaycasestudy.features.home.presentation.HomeViewModel" />
+
     </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            shimmer_state="@{viewModel.shimmerState}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_repo_items" />
+
+                <include layout="@layout/shimmer_repo_items" />
+
+                <include layout="@layout/shimmer_repo_items" />
+
+                <include layout="@layout/shimmer_repo_items" />
+
+            </LinearLayout>
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repositoryRecyclerView"
+            bind_repos="@{viewModel.githubRepositoriesData}"
+            decorators_enabled="@{true}"
+            recyclerAdapter="@{githubRepoAdapter}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/retryLayout"
+            layout="@layout/error_layout"
+            toggle_visibility="@{viewModel.errorViewVisibility}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewModel="@{viewModel}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

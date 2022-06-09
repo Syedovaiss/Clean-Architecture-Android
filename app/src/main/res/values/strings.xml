@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">sadapay casestudy</string>
     <string name="trending">Trending</string>
+    <string name="invalid_error_state">Unable to map error state</string>
+    <string name="network_error_message">We think you are not connected to internet right now.</string>
+    <string name="an_alien_is_probably_blocking_your_signal">An alien is probably blocking your signal</string>
+    <string name="something_went_wrong">Something Went Wrong</string>
+    <string name="retry">Retry</string>
+    <string name="item_tapped_message">You have tapped the %s repository of %s</string>
 </resources>

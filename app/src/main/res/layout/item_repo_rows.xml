@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.ovais.sadapaycasestudy.features.home.data.GithubRepositoryUIData" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ownerImage"
+            apply_image="@{item.ownerImage}"
+            android:layout_width="@dimen/unit_6x"
+            android:layout_height="@dimen/unit_6x"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:layout_marginTop="@dimen/unit_2x"
+            android:layout_marginBottom="@dimen/unit_2x"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            tools:src="@color/dull_green" />
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/BodyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:layout_marginTop="@dimen/unit_2x"
+            android:text="@{item.ownerName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ownerImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Syed Ovais Akhtar" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:layout_marginTop="@dimen/unit_1x"
+            android:text="@{item.repositoryName}"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ownerImage"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            tools:text="SadaPay Case Study" />
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/BodyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:layout_marginTop="@dimen/unit_2x"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:text="@{item.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ownerImage"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Description" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit_1x"
+            android:layout_marginTop="@dimen/unit_1x"
+            android:layout_marginBottom="@dimen/unit_2x"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ownerImage"
+            app:layout_constraintTop_toBottomOf="@id/description">
+
+            <TextView
+                android:id="@+id/language"
+                style="@style/BodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/unit_1x"
+                android:drawablePadding="@dimen/unit_1x"
+                android:text="@{item.language}"
+                app:drawableStartCompat="@drawable/ic_round_small_circle"
+                tools:text="Koltin" />
+
+            <TextView
+                android:id="@+id/rating"
+                style="@style/BodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{String.valueOf(item.starsCount)}"
+                android:textAlignment="center"
+                app:drawableStartCompat="@drawable/ic_stars"
+                tools:text="120" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
