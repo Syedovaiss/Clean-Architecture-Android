@@ -12,6 +12,7 @@
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/dull_green</item>
     </style>
 
     <style name="ButtonStyle">

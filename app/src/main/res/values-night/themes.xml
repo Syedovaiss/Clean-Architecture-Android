@@ -1,18 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+
     <style name="Theme.SadapayCasestudy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/dull_green</item>
         <item name="colorPrimaryVariant">@color/dull_green</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/dull_green</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="ToolbarTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/color_gray</item>
+        <item name="android:background">@color/dull_green</item>
     </style>
-
 
     <style name="ButtonStyle">
         <item name="android:layout_width">match_parent</item>
@@ -23,7 +25,7 @@
     </style>
 
     <style name="TitleText" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
@@ -34,6 +36,12 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/color_gray</item>
     </style>
+
+    <style name="CircleImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
