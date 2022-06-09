@@ -20,5 +20,6 @@ class GithubRepoFragment : BaseFragment<FragmentGithubRepoBinding>() {
         githubRepoAdapter = GithubRepoAdapter {
             repoViewModel.onItemSelected(it)
         }
+        repoViewModel.onInitGithubRepositories()
     }
 }

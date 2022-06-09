@@ -8,6 +8,7 @@ import com.ovais.sadapaycasestudy.features.home.data.GithubRepositoryUIData
 import com.ovais.sadapaycasestudy.features.home.domain.GithubRepositoriesUseCase
 import com.ovais.sadapaycasestudy.managers.StringResourceManager
 import com.ovais.sadapaycasestudy.managers.ToastManager
+import com.ovais.sadapaycasestudy.utils.ViewError
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -30,7 +31,7 @@ class HomeViewModel @Inject constructor(
         get() = _githubRepositoriesData
     private val _githubRepositoriesData: MutableLiveData<List<GithubRepositoryUIData>> by lazy { MutableLiveData() }
 
-    init {
+    fun onInitGithubRepositories() {
         fetchGithubRepositories()
     }
 
@@ -42,7 +43,7 @@ class HomeViewModel @Inject constructor(
             disableShimmerState()
         }, onError = { error ->
             _errorViewVisibility.value = true
-            toastManager.showToast(error)
+            toastManager.showToast((error as ViewError).message)
             disableShimmerState()
         })
     }

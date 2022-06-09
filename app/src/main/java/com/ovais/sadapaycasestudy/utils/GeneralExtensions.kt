@@ -14,3 +14,5 @@ fun <T> List<T>?.toArrayList(): ArrayList<T> {
         this as ArrayList<T>
     }
 }
+
+val Boolean?.default get() = this ?: false
