@@ -10,10 +10,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class GithubRepoFragment : BaseFragment<FragmentGithubRepoBinding>() {
 
-    private val repoViewModel: RepoViewModel by viewModels()
+    private val repoViewModel: HomeViewModel by viewModels()
 
     override fun getBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ) = FragmentGithubRepoBinding.inflate(inflater, container, false)
+    ) = FragmentGithubRepoBinding.inflate(inflater, container, false).apply {
+        repoViewModel.initGithubRepositories()
+    }
 }
