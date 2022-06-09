@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ovais.sadapaycasestudy.features.home.presentation.HomeViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/errorHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/api_failure_anim" />
+
+        <TextView
+            android:id="@+id/errorHeader"
+            style="@style/TitleText"
+            android:layout_marginBottom="@dimen/unit_2x"
+            android:text="@string/something_went_wrong"
+            app:layout_constraintBottom_toTopOf="@id/errorMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/errorMessage"
+            style="@style/BodyText"
+            android:layout_marginBottom="@dimen/unit_8x"
+            android:text="@string/an_alien_is_probably_blocking_your_signal"
+            android:textColor="@color/color_gray"
+            app:layout_constraintBottom_toTopOf="@id/retryButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/retryButton"
+            style="@style/ButtonStyle"
+            android:layout_marginBottom="@dimen/unit_2x"
+            android:background="@drawable/retry_button"
+            android:onClick="@{() -> viewModel.onRetry()}"
+            android:text="@string/retry"
+            android:textAllCaps="true"
+            android:textColor="@color/dull_green"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

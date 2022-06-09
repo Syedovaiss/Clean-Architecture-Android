@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_round_small_circle.xml" value="0.17777777777777778" />
+        <entry key="app/src/main/res/drawable/ic_stars.xml" value="0.17777777777777778" />
+        <entry key="app/src/main/res/drawable/retry_button.xml" value="0.17777777777777778" />
         <entry key="app/src/main/res/layout/activity_github.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22395833333333334" />
+        <entry key="app/src/main/res/layout/error_layout.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/fragment_github_repo.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/layout/item_repo_rows.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/shimmer_repo_items.xml" value="0.335" />
       </map>
     </option>
   </component>

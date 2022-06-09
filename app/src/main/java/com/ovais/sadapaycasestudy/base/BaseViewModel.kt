@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
 
-    protected fun unzipFlowResults(
+    protected fun unzipResults(
         flow: Flow<Resource<Any>>,
         onSuccess: (Any) -> Unit,
         onError: (Any) -> Unit

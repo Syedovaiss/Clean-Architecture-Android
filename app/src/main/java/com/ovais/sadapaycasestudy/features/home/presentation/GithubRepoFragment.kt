@@ -16,6 +16,9 @@ class GithubRepoFragment : BaseFragment<FragmentGithubRepoBinding>() {
         inflater: LayoutInflater,
         container: ViewGroup?
     ) = FragmentGithubRepoBinding.inflate(inflater, container, false).apply {
-        repoViewModel.initGithubRepositories()
+        viewModel = repoViewModel
+        githubRepoAdapter = GithubRepoAdapter {
+            repoViewModel.onItemSelected(it)
+        }
     }
 }
