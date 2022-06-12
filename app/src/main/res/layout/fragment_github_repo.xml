@@ -18,9 +18,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:id="@+id/fragment_github_repo"
         android:layout_height="match_parent">
 
         <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerView"
             shimmer_state="@{viewModel.shimmerState}"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
