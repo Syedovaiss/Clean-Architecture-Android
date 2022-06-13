@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sadapay casestudy</string>
+    <string name="app_name">SadaPay</string>
     <string name="trending">Trending</string>
     <string name="invalid_error_state">Unable to map error state</string>
     <string name="network_error_message">We think you are not connected to internet right now.</string>
