@@ -49,6 +49,7 @@ class HomeViewModel @Inject constructor(
     }
 
     fun onRetry() {
+        _errorViewVisibility.value = false
         fetchGithubRepositories()
     }
 
