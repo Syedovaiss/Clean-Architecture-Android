@@ -52,7 +52,8 @@ class GithubActivityTest {
 
     @Test
     fun verifyToolbarText() {
-        onView(withId(R.id.toolbar)).check(matches(hasDescendant(withText("Trending"))))
+        val toolbarTitle = "Trending"
+        onView(withId(R.id.toolbar)).check(matches(hasDescendant(withText(toolbarTitle))))
     }
 
     @Test
