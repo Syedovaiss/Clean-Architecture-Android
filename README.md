@@ -1,32 +1,4 @@
-# SadaPay Case Study
 
-## Objective
-The goal of this assignment is to build a simple single-screen app that shows the current
-trending Github repositories fetched from a public API. The design and business
-specifications have been provided below.
-We have deliberately kept the app simple enough for everyone to attempt it but we are keen to see the approach you take to solve it. You have the freedom to give your best to it and demonstrate your skills for us to evaluate you better.
-You should approach this problem as if you are building an MVP app for our production users
-- the process you follow and the things you should consider should reflect how you would
-approach this solution if you were to be working for us on something we are going to release
-to customers.
-
-
-## App Requirements
-
-- Please complete using either:
-iOS using Swift as the development language and supporting min iOS-13
-or Android using Kotlin as the development language and supporting min API level 21 (Lollipop)
-- Use Git as you would on a normal production project to show code history and
-development
-- The app should fetch the trending repositories from the provided public API and display it to the users
-- Assume API calls have a cost per call and that in general, slightly stale data is ok - but users should be able to see current data when required.
-- Shimmer animation on the table cell while API is fetching
-- Dark mode support (for bonus points)
-
-## API Gateway
-
-You need to fetch the data from the following endpoint.[Github Repositories](
-https://api.github.com/search/repositories?q=language=+sort:stars ).
 
 ## Structure
 ###### Base Package includes all the base classes:
